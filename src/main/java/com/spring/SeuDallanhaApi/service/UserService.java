@@ -1,11 +1,10 @@
-package com.spring.SeuDallanhaApi.services;
+package com.spring.SeuDallanhaApi.service;
 
 import com.spring.SeuDallanhaApi.dtos.UserDTO;
 import com.spring.SeuDallanhaApi.exceptions.UserAlreadyExistException;
 import com.spring.SeuDallanhaApi.models.User;
-import org.springframework.stereotype.Service;
 
-public interface IUserService {
+public interface UserService {
     User registerNewUserAccount(UserDTO accountDto) throws UserAlreadyExistException;
     User getUser(String verificationToken);
     void deleteUser(User user);

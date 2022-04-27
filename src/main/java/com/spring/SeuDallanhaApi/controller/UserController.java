@@ -2,7 +2,7 @@ package com.spring.SeuDallanhaApi.controller;
 
 import com.spring.SeuDallanhaApi.dtos.UserDTO;
 import com.spring.SeuDallanhaApi.models.User;
-import com.spring.SeuDallanhaApi.services.IUserService;
+import com.spring.SeuDallanhaApi.service.UserService;
 import com.spring.SeuDallanhaApi.utils.GenericResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +18,7 @@ import javax.validation.Valid;
 public class UserController {
 
     @Autowired
-    private IUserService userService;
+    private UserService userService;
 
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 

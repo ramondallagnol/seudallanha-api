@@ -1,11 +1,11 @@
-package com.spring.SeuDallanhaApi.services.servicesImpl;
+package com.spring.SeuDallanhaApi.service.serviceImpl;
 
 import com.spring.SeuDallanhaApi.dtos.UserDTO;
 import com.spring.SeuDallanhaApi.exceptions.UserAlreadyExistException;
 import com.spring.SeuDallanhaApi.models.User;
-import com.spring.SeuDallanhaApi.repositories.RoleRepository;
-import com.spring.SeuDallanhaApi.repositories.UserRepository;
-import com.spring.SeuDallanhaApi.services.IUserService;
+import com.spring.SeuDallanhaApi.repository.RoleRepository;
+import com.spring.SeuDallanhaApi.repository.UserRepository;
+import com.spring.SeuDallanhaApi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 
 @Service
-public class IUserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;

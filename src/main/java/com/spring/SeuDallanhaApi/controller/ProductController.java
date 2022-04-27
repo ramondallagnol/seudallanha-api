@@ -2,7 +2,7 @@ package com.spring.SeuDallanhaApi.controller;
 
 import com.spring.SeuDallanhaApi.dtos.ProductDTO;
 import com.spring.SeuDallanhaApi.models.Product;
-import com.spring.SeuDallanhaApi.services.IProductService;
+import com.spring.SeuDallanhaApi.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,21 +18,21 @@ public class ProductController {
     public static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
-    IProductService IProductService;
+    ProductService ProductService;
 
     @PostMapping("/save")
     public ResponseEntity<Product> create(@Valid @RequestBody ProductDTO dto) {
-        return ResponseEntity.ok(IProductService.save(dto));
+        return ResponseEntity.ok(ProductService.save(dto));
     }
 
     @GetMapping("")
     public ResponseEntity<Collection<Product>> getAll() {
-        return ResponseEntity.ok(IProductService.findAll());
+        return ResponseEntity.ok(ProductService.findAll());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Product> getById(@PathVariable("id") long id) {
-        return ResponseEntity.ok(IProductService.findById(id));
+        return ResponseEntity.ok(ProductService.findById(id));
     }
 
 //    @DeleteMapping("/{id}")

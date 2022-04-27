@@ -1,12 +1,12 @@
-package com.spring.SeuDallanhaApi.services.servicesImpl;
+package com.spring.SeuDallanhaApi.service.serviceImpl;
 
 import com.spring.SeuDallanhaApi.dtos.ProductDTO;
 import com.spring.SeuDallanhaApi.exceptions.ApiRequestException;
 import com.spring.SeuDallanhaApi.models.Category;
 import com.spring.SeuDallanhaApi.models.Product;
-import com.spring.SeuDallanhaApi.repositories.CategoryRepository;
-import com.spring.SeuDallanhaApi.services.IProductService;
-import com.spring.SeuDallanhaApi.repositories.ProductRepository;
+import com.spring.SeuDallanhaApi.repository.CategoryRepository;
+import com.spring.SeuDallanhaApi.service.ProductService;
+import com.spring.SeuDallanhaApi.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 @Service
-public class IProductServiceImpl implements IProductService {
+public class ProductServiceImpl implements ProductService {
 
     @Autowired
     ProductRepository productRepository;

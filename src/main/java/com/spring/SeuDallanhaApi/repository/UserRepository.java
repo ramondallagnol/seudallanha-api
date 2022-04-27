@@ -1,4 +1,4 @@
-package com.spring.SeuDallanhaApi.repositories;
+package com.spring.SeuDallanhaApi.repository;
 
 import com.spring.SeuDallanhaApi.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;

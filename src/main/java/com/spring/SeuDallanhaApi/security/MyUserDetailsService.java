@@ -3,7 +3,7 @@ package com.spring.SeuDallanhaApi.security;
 import com.spring.SeuDallanhaApi.models.Privilege;
 import com.spring.SeuDallanhaApi.models.Role;
 import com.spring.SeuDallanhaApi.models.User;
-import com.spring.SeuDallanhaApi.repositories.UserRepository;
+import com.spring.SeuDallanhaApi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -50,13 +50,13 @@ public class MyUserDetailsService implements UserDetailsService {
 
     // UTIL
 
-    private final Collection<? extends GrantedAuthority> getAuthorities(final Collection<Role> roles) {
+    private Collection<? extends GrantedAuthority> getAuthorities(final Collection<Role> roles) {
         return getGrantedAuthorities(getPrivileges(roles));
     }
 
-    private final List<String> getPrivileges(final Collection<Role> roles) {
-        final List<String> privileges = new ArrayList<String>();
-        final List<Privilege> collection = new ArrayList<Privilege>();
+    private List<String> getPrivileges(final Collection<Role> roles) {
+        final List<String> privileges = new ArrayList<>();
+        final List<Privilege> collection = new ArrayList<>();
         for (final Role role : roles) {
             collection.addAll(role.getPrivileges());
         }
@@ -67,8 +67,8 @@ public class MyUserDetailsService implements UserDetailsService {
         return privileges;
     }
 
-    private final List<GrantedAuthority> getGrantedAuthorities(final List<String> privileges) {
-        final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+    private List<GrantedAuthority> getGrantedAuthorities(final List<String> privileges) {
+        final List<GrantedAuthority> authorities = new ArrayList<>();
         for (final String privilege : privileges) {
             authorities.add(new SimpleGrantedAuthority(privilege));
         }
